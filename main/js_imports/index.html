@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Imports</title>
+    <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+    <!--<script>
+        var jq=jQuery.noConflict();
+    </script>-->
+    <!--Includes for web components-->
+    <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="polymerTemplate.html">
+    <link rel="import" href="polymerTemplate1.html">
+</head>
+<body>
+    <div id='one'></div>
+    <div id='two'></div>
+    <template id="sampleTemplate">
+        <hello-polymer></hello-polymer>
+    </template>
+    <template id="sampleTemplate2">
+        <hello-polymer-2></hello-polymer-2>
+    </template>
+
+    <!--shadow dom scripts-->
+    <script>
+        // create shadow DOM on the <div> elements above
+        var shadowOne = document.querySelector('#one').createShadowRoot();
+        var t = document.querySelector('#sampleTemplate');
+        var clone = document.importNode(t.content, true);
+        shadowOne.appendChild(clone);
+        t.remove();
+        var shadowTwo = document.querySelector('#two').createShadowRoot();
+        var t1 = document.querySelector('#sampleTemplate2');
+        var clone1 = document.importNode(t1.content, true);
+        shadowOne.appendChild(clone1);
+        t1.remove();
+
+        jq(document).ready(function(){
+            jq('#one').addClass("polymer");
+        })
+
+    </script>
+
+</body>
+</html>

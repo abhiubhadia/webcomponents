@@ -39,13 +39,6 @@ $ grunt
 $ live-server
 ```
 
-URL to access:
-
-```sh
-$ http://localhost:8080/
-```
-
-
 
 
    [Webcomponents]: <http://webcomponents.org/>

@@ -1,0 +1,29 @@
+<!-- Defines element markup -->
+<dom-module id="hello-angular">
+    <template>
+        <!--import Angular files and typescript support-->
+        <script src="https://code.angularjs.org/tools/system.js"></script>
+        <script src="https://code.angularjs.org/tools/typescript.js"></script>
+        <!--<script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>-->
+        <script src="https://code.angularjs.org/2.0.0-alpha.46/angular2.js"></script>
+        <script>
+            System.config({
+                transpiler: 'typescript',
+                typescriptOptions: { emitDecoratorMetadata: true }
+            });
+
+            /*import custom element typescript files*/
+            System.import('../angular/app.ts');
+            System.import('../angular/show-properties.ts');
+        </script>
+        <my-app>loading...</my-app>
+        <display></display>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'hello-angular'
+    });
+</script>

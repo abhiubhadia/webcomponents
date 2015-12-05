@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Angular 2 QuickStart</title>
+
+    <script src="../../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../../bower_components/es6-shim/es6-sham.min.js"></script>
+    <script src="../../bower_components/console-polyfill/index.js"></script>
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!--import Angular files and typescript support-->
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <!--<script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>-->
+    <script src="https://code.angularjs.org/2.0.0-alpha.46/angular2.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true }
+        });
+
+        /*import custom element typescript files*/
+        System.import('./app.ts');
+        System.import('./show-properties.ts');
+    </script>
+</head>
+<body>
+    <!-- Run custom element -->
+    <my-app>loading...</my-app>
+    <display></display>
+</body>
+</html>

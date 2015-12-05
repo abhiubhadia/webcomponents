@@ -1,0 +1,38 @@
+<!-- Defines element markup -->
+<dom-module id="hello-polymer">
+    <!--Polymer Includes-->
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <link rel="import" href="../polymer/input.html">
+    <template>
+        <input-text></input-text>
+        <div id="container">
+            <content>
+                <p id="three">My Name: {{who}}</p>
+                <p id="four"> Friends: </p>
+                <ul>
+                    <template is="dom-repeat" items="{{friends}}">
+                        <li>{{item}}</li>
+                    </template>
+                </ul>
+            </content>
+        </div>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'hello-polymer',
+        properties: {
+            who: {
+                type: String,
+                value: 'Alice'
+            }
+        },
+        ready:function(){
+            this.friends= ['Mathew','John','Rob','Melissa'];
+            jq('#three').addClass('Hello');
+            jq('#one').addClass('Three');
+        }
+    });
+</script>

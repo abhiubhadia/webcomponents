@@ -1,0 +1,37 @@
+<!-- Defines element markup -->
+<dom-module id="hello-polymer-2">
+    <!--Polymer Includes-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        var jq=jQuery.noConflict();
+    </script>
+    <template>
+        <div id="container">
+            <content>
+                <p>My Name: {{who}}</p>
+                <p> Friends: </p>
+                <ul>
+                    <template is="dom-repeat" items="{{friends}}">
+                        <li>{{item}}</li>
+                    </template>
+                </ul>
+            </content>
+        </div>
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    Polymer({
+        is: 'hello-polymer-2',
+        properties: {
+            who: {
+                type: String,
+                value: 'Andy'
+            }
+        },
+        ready:function(){
+            this.friends= ['Matt','Rebecca','Rob','Mon'];
+        }
+    });
+</script>

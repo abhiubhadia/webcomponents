@@ -1,0 +1,16 @@
+<!-- Defines element markup -->
+<template>
+
+</template>
+
+<script>
+    (function(window, document, undefined) {
+        // Creates an object based in the HTML Element prototype
+        var MyElementProto = Object.create(HTMLElement.prototype);
+
+        // Registers <template-one> in the main document
+        window.MyElement = document.registerElement('template-one', {
+            prototype: MyElementProto
+        });
+    })(window, document);
+</script>

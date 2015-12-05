@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>&lt;hello-world&gt;</title>
+
+    <!-- Imports polyfill -->
+    <script src="../../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <script>
+        window.Polymer = window.Polymer || {};
+        window.Polymer.dom = 'shadow';
+    </script>
+
+    <!-- Imports custom element -->
+    <link rel="import" href="../../bower_components/polymer/polymer.html">
+    <link rel="import" href="angular.html">
+    <!--<link rel="import" href="angular15.html">-->
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular</h3>
+                <p>
+                    <hello-angular></hello-angular>
+                </p>
+            </div>
+
+            <div class="well" ng-app="app">
+                <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular 1.5</h3>
+                <div>
+                    <!--<hello-angular15></hello-angular15>-->
+                </div>
+            </div>
+
+            <!--<div class="well">-->
+                <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Web components</h3>-->
+                <!--<p>-->
+                    <!--<hello-world who="Web-component" desc="Web component template, custom-tags, import, shadow DOM"></hello-world>-->
+                <!--</p>-->
+            <!--</div>-->
+
+            <!--<div class="well">-->
+                <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Polymer</h3>-->
+                <!--<p>-->
+                    <!--<header-polymer></header-polymer>-->
+                    <!--<hello-polymer who="Tom"></hello-polymer>-->
+                <!--</p>-->
+            <!--</div>-->
+
+            <!--<div class="well">-->
+                <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> React</h3>-->
+                <!--<p>-->
+                <!--<div id="container"></div>-->
+                <!--</p>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</body>
+</html>

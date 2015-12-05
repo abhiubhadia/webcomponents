@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>&lt;hello-world&gt;</title>
+
+    <!-- Imports polyfill -->
+    <script src="../../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../../bower_components/es6-shim/es6-sham.min.js"></script>
+    <script src="../../bower_components/console-polyfill/index.js"></script>
+
+    <script src="../../bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!--import Angular files and typescript support-->
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.46/angular2.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: { emitDecoratorMetadata: true }
+        });
+
+        /*import custom element typescript files*/
+        System.import('../angular/app.ts');
+        System.import('../angular/show-properties.ts');
+        System.import('polymer.ts');
+    </script>
+
+    <link rel="import" href="hello-polymer.html">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular</h3>
+            <p>
+                <my-app>loading...</my-app>
+                <display></display>
+            </p>
+        </div>
+
+        <!--<div class="well" ng-app="app">-->
+            <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Angular 1.5</h3>-->
+            <!--<div>-->
+                <!--<div ng-controller="BeerCounter">-->
+                    <!--<div ng-repeat="beerCount in beers">-->
+                        <!--<ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="well">-->
+            <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Web components</h3>-->
+            <!--<p>-->
+                <!--<hello-world who="Web-component" desc="Web component template, custom-tags, import, shadow DOM"></hello-world>-->
+            <!--</p>-->
+        <!--</div>-->
+
+        <div class="well">
+            <h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Polymer</h3>
+            <p>
+                <!--<header-polymer></header-polymer>-->
+                <!--<hello-polymer who="Tom"></hello-polymer>-->
+                <polymerNg></polymerNg>
+            </p>
+        </div>
+
+        <!--<div class="well">-->
+            <!--<h3><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> React</h3>-->
+            <!--<p>-->
+            <!--<div id="container"></div>-->
+            <!--</p>-->
+        <!--</div>-->
+
+    </div>
+</div>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</body>
+</html>
