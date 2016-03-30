@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+</head>
+<body>
+
+<dom-module id="test-element">
+    <template>
+        <div>Hello <span>[[obj.name]]</span>
+        </div>
+    </template>
+    <script>
+        TestElement = Polymer({
+            is: "test-element",
+
+            properties: {
+                "obj": {
+                    type: Object,
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>
+<dom-module id="test-element2">
+    <template>
+        <input value="{{obj.name}}" />
+    </template>
+
+    <script>
+        Polymer({
+            is: "test-element2",
+
+            properties: {
+                "obj": {
+                    type: Object,
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>
+<dom-module id="test-element3">
+    <template>
+        <test-element2 obj="[[obj]]"></test-element2>
+        <test-element obj="[[obj]]"></test-element>
+    </template>
+
+    <script>
+        Polymer({
+            is: "test-element3",
+
+            properties: {
+                "obj": {
+                    type: Object,
+                    notify: true,
+                    value: {
+                        "name": "Charlie"
+                    }
+                }
+            }
+        });
+    </script>
+</dom-module>
+<test-element3></test-element3>
+</body>
+</html>

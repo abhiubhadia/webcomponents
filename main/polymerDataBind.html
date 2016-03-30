@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../bower_components/es6-shim/es6-shim.min.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+</head>
+<body>
+    <dom-module id="parent-element">
+        <template>
+            <first-child prop={{value}}></first-child>
+            <second-child feat1={{value}}></second-child>
+            In parent-element
+            <h1>{{value}}</h1> </template>
+        <script>
+            Polymer({
+                is: "parent-element",
+                properties: {
+                    value: {
+                        type: String
+                    }
+                },
+                valueChanged: function() {
+                    console.log("value changed");
+                }
+            });
+        </script>
+    </dom-module>
+    <dom-module id="first-child">
+        <template>
+            <p>first element.</p>
+            <h2>{{prop}}</h2> </template>
+        <script>
+            Polymer({
+                is: "first-child",
+                properties: {
+                    prop: {
+                        type: String,
+                        notify: true
+                    }
+                },
+                ready: function() {
+                    this.prop = "property";
+                }
+            });
+        </script>
+    </dom-module>
+    <dom-module id="second-child">
+        <template>
+            <p>Second element.</p>
+            <h2>{{feat1}}</h2> </template>
+        <script>
+            Polymer({
+                is: "second-child",
+                properties: {
+                    feat1: {
+                        type: String,
+                        notify: true,
+                        value: "initial value"
+                    }
+                },
+                ready: function() {
+                    this.addEventListener("feat1-changed", this.myAct);
+                },
+                myAct: function() {
+                    console.log("feat1-changed ", this.feat1);
+                }
+            });
+        </script>
+    </dom-module>
+    <parent-element></parent-element>
+</body>
+</html>
